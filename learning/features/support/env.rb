@@ -7,7 +7,7 @@ require 'selenium-webdriver'
 require 'melomel'
 
 Before do |scenario|
-  @driver = Selenium::WebDriver.for :chrome
+  @driver = Selenium::WebDriver.for :firefox
   @driver.navigate.to "http://localhost:4567/HelloWorld.swf"
   Melomel.connect()
 end

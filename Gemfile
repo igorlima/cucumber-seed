@@ -1,0 +1,6 @@
+source 'http://rubygems.org'
+gem 'sinatra'
+gem 'selenium-webdriver'
+gem 'rspec'
+gem 'cucumber'
+gem 'melomel'

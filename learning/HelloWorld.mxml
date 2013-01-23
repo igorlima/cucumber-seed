@@ -1,0 +1,36 @@
+<s:Application
+   xmlns:fx="http://ns.adobe.com/mxml/2009"
+   xmlns:s="library://ns.adobe.com/flex/spark"
+   xmlns:m="library://melomel/2010"
+>
+   <fx:Declarations>
+      <m:Melomel/>
+   </fx:Declarations>
+   
+   <fx:Script>
+      <![CDATA[
+      
+      import mx.controls.Alert;
+      
+      private function greetButton_onClick( event:MouseEvent ):void{
+         var message:String;
+         if(nameTextInput.text == "" ){
+            message = "Your name is required!";
+         }else{
+            message = "Hello " + nameTextInput.text + "!";
+         }
+         Alert.show(message);
+      }
+      
+      ]]>
+   </fx:Script>
+
+   <s:VGroup>
+      <s:VGroup>
+         <s:Label text="Name" />
+         <s:TextInput id="nameTextInput" />
+      </s:VGroup>
+      
+      <s:Button id="greetButton" label="Greet" click="greetButton_onClick(event);" />
+   </s:VGroup>
+</s:Application>

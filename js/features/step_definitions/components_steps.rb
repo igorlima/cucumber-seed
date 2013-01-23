@@ -1,0 +1,38 @@
+# language: pt
+
+def get_component_classes(name)
+   case name.downcase
+      when 'alerta' then ['mx.controls.Alert']
+      when 'app' then ['spark.components.Application']
+      when 'botao' then ['mx.controls.Button', 'spark.components.supportClasses.ButtonBase']
+      when 'botao modulo' then ['mx.controls.Button', 'spark.components.supportClasses.ButtonBase']
+      when 'check box' then ['mx.controls.CheckBox', 'spark.components.CheckBox']
+      when 'color picker' then ['mx.controls.ColorPicker']
+      when 'combo box' then ['mx.controls.ComboBox', 'spark.components.ComboBox']
+      when 'data grid' then ['mx.controls.DataGrid', 'mx.controls.AdvancedDataGrid']
+      when 'date chooser' then ['mx.controls.DateChooser']
+      when 'campo de data' then ['mx.controls.DateField', 'br.ufla.lemaf.lemaflex.controls.DateFieldBr']
+      when 'scroll bar' then ['mx.controls.HScrollBar', 'mx.controls.VScrollBar', 'spark.components.HScrollBar', 'spark.components.VScrollBar']
+      when 'slider' then ['mx.controls.HSlider', 'mx.controls.VSlider', 'spark.components.HSlider', 'spark.components.VSlider']
+      when 'imagem' then ['mx.controls.Image']
+      when 'label' then ['mx.controls.Label', 'spark.components.Label', 'spark.components.RichText']
+      when 'lista' then ['mx.controls.List', 'spark.components.List']
+      when 'desktop' then ['spark.components.SkinnableContainer']
+      when 'modulo' then ['br.ufla.lemaf.lemaflex.IModuleInterface']
+      when 'menu' then ['mx.controls.Menu']
+      when 'menu bar' then ['mx.controls.MenuBar']
+      when 'panel' then ['mx.containers.Panel', 'spark.components.Panel']
+      when 'stepper' then ['mx.controls.NumericStepper', 'spark.components.Spinner']
+      when 'popup' then ['br.ufla.lemaf.lemaflex.ui.Popup']
+      when 'pop up button' then ['mx.controls.PopUpButton']
+      when 'pop up menu button' then ['mx.controls.PopUpMenuButton']
+      when 'progress bar' then ['mx.controls.ProgressBar']
+      when 'radio button' then ['mx.controls.RadioButton', 'spark.components.RadioButton']
+      when 'rich text area' then ['mx.controls.RichTextEditor', 'spark.components.RichEditableText']
+      when 'tab' then ['mx.controls.tabBarClasses.Tab']
+      when 'campo de texto' then ['mx.controls.TextInput', 'spark.components.TextInput']
+      when 'area de texto' then ['mx.controls.TextArea', 'spark.components.TextArea']
+      when 'tool tip' then ['mx.controls.ToolTip']
+      when 'tree' then ['mx.controls.Tree']
+   end
+end

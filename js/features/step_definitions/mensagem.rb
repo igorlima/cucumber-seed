@@ -5,6 +5,10 @@ Entao /^deve aparecer a mensagem de (sucesso|erro) "([^\"]*)"$/ do |tipo_da_mens
   verify_mensagem tipo_da_mensagem, mensagem
 end
 
+E /^aparecer a mensagem de (sucesso|erro) "([^\"]*)"$/ do |tipo_da_mensagem, mensagem|
+  verify_mensagem tipo_da_mensagem, mensagem
+end
+
 private
 
   def verify_mensagem tipo_da_mensagem, mensagem

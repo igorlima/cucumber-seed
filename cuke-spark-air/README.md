@@ -5,10 +5,10 @@ Cucumber & Spark Example
 
 To run this example, first compile the Flex application:
 
-	ant
+  ant
 
 Finally, run the Cucumber tests:
 
-	cucumber
+  cucumber
 
 All tests should complete without error.

@@ -5,14 +5,14 @@ Cucumber & Spark Example
 
 To run this example, first compile the Flex application:
 
-	ant
+  ant
 
 In a separate window, start the local web server:
 
-	ruby http.rb
+  ruby http.rb
 
 Finally, run the Cucumber tests:
 
-	cucumber
+  cucumber
 
 All tests should complete without error.

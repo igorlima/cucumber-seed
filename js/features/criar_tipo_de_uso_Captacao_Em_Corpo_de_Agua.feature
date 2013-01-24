@@ -19,20 +19,16 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
       E aguardar 2 segundos para carregar a pagina
-    Quando preencher "Gabriel Lunar" no campo "Destinatário"
-      E preencher "Centro" no campo "Logradouro" em "Endereço para Correspondência"
-      E preencher "4" no campo "Número" em "Endereço para Correspondência"
-      E preencher "Centro" no campo "Bairro" em "Endereço para Correspondência"
+    Quando preencher "Gabriel Lunar" no campo "Destinatário" caso esteja vazio
+      E preencher "Centro" no campo "Logradouro" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "4" no campo "Número" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "Centro" no campo "Bairro" em "Endereço para Correspondência" caso esteja vazio
       E selecionar "MG" na listagem de "Estado" em "Endereço para Correspondência"
       E selecionar "Lavras" na listagem de "Municipio" em "Endereço para Correspondência"
-      E preencher "Industrial" no campo "Distrito"
-      E preencher "37200000" no campo "CEP" em "Endereço para Correspondência"
-      E preencher "455645" no campo "Caixa Postal" em "Endereço para Correspondência"
-      E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência"
-      E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência"
-      E preencher "igor.ribeiro@gmail.com" no campo "E-mail"
-      E aguardar 10 segundos para carregar a pagina
-
-
-      
-   
+      E preencher "Industrial" no campo "Distrito" caso esteja vazio
+      E preencher "37200000" no campo "CEP" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "455645" no campo "Caixa Postal" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência" caso esteja vazio
+      E preencher "igor.ribeiro@gmail.com" no campo "E-mail" caso esteja vazio
+      E aguardar 5 segundos para carregar a pagina

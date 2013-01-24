@@ -1,31 +1,37 @@
 # language: pt
 # encoding: utf-8
 
-E /^preencher "([^\"]*)" no campo "([^\"]*)"$/ do |texto, nome_campo|
-  preencher_campo_texto( nome_campo, texto )
+E /^preencher "([^\"]*)" no campo "([^\"]*)"( caso esteja vazio)?$/ do |texto, nome_campo, is_vazio |
+  preencher_campo_texto( nome_campo, texto, is_vazio )
 end
 
-E /^preencher "([^\"]*)" no campo "([^\"]*)" em "([^\"]*)"$/ do |texto, nome_campo, container|
-  preencher_campo_texto_em_container( container, nome_campo, texto )
+E /^preencher "([^\"]*)" no campo "([^\"]*)" em "([^\"]*)"( caso esteja vazio)?$/ do |texto, nome_campo, container, is_vazio |
+  preencher_campo_texto_em_container( container, nome_campo, texto, is_vazio )
 end
 
 private
 
-  def preencher_campo_texto_em_container nome_container, nome_campo, texto
+  def preencher_campo_texto_em_container nome_container, nome_campo, texto, is_vazio
     seletor = create_seletor_campo_texto_em_container nome_container, nome_campo
-    preencher_campo_texto_usando_seletor seletor, texto
+    preencher_campo_texto_usando_seletor seletor, texto, is_vazio
   end
 
-  def preencher_campo_texto nome_campo, texto
+  def preencher_campo_texto nome_campo, texto, is_vazio
     seletor = create_selector_campo_texto nome_campo
-    preencher_campo_texto_usando_seletor seletor, texto
+    preencher_campo_texto_usando_seletor seletor, texto, is_vazio
   end
 
-  def preencher_campo_texto_usando_seletor seletor, texto
+  def preencher_campo_texto_usando_seletor seletor, texto, is_vazio
     elemento_dom = @driver.execute_script("return #{seletor}")
     fail(ArgumentError.new('Campo texto nao encontrado!')) if elemento_dom.nil?
 
-    elemento_dom.send_keys texto
+    if not is_vazio.nil?
+      text = @driver.execute_script("return #{seletor}.value")
+      elemento_dom.send_keys texto if text.empty?
+    else
+      elemento_dom.send_keys texto
+    end
+
   end
 
   def seletor_campo_texto

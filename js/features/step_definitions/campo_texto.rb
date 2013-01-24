@@ -1,16 +1,8 @@
 # language: pt
 # encoding: utf-8
 
-Quando /^eu preencher "([^\"]*)" no campo "([^\"]*)"$/ do |texto, nome_campo|
-  preencher_campo_texto( nome_campo, texto )
-end
-
 E /^preencher "([^\"]*)" no campo "([^\"]*)"$/ do |texto, nome_campo|
   preencher_campo_texto( nome_campo, texto )
-end
-
-Quando /^eu preencher "([^\"]*)" no campo "([^\"]*)" em "([^\"]*)"$/ do |texto, nome_campo, container|
-  preencher_campo_texto_em_container( container, nome_campo, texto )
 end
 
 E /^preencher "([^\"]*)" no campo "([^\"]*)" em "([^\"]*)"$/ do |texto, nome_campo, container|
@@ -45,6 +37,6 @@ private
   end
 
   def create_seletor_campo_texto_em_container nome_container, nome_campo
-    seletor_container = create_selector_container nome_container
-    "#{seletor_container}.getElement(#{seletor_campo nome_campo})#{seletor_campo_texto}"
+    seletor_container = create_seletor_campo_em_container nome_container, nome_campo
+    "#{seletor_container}#{seletor_campo_texto}"
   end

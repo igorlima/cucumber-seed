@@ -13,3 +13,8 @@ end
 def create_selector_container nome_container
   "$$(\"div.header:contains('#{nome_container}')\")[0].getParent('table')"
 end
+
+def create_seletor_campo_em_container nome_container, nome_campo
+  seletor_container = create_selector_container nome_container
+  "#{seletor_container}.getElement(#{seletor_campo nome_campo})"
+end

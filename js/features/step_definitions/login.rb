@@ -15,5 +15,5 @@ Dado /^o sistema logado com o usuario "([a-zA-Z1-9 ]*)" e com a senha "([a-zA-Z1
 
   message_error = @driver.execute_script("return document.querySelector(\".message.error\")")
   fail(ArgumentError.new('Usuario nao autenticado!')) if not message_error.nil?
-
+  
 end

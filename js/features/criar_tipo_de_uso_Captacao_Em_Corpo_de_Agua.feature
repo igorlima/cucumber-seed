@@ -5,7 +5,7 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
    
   Cenario: Criação do modo de uso
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
-    Quando eu selecionar "CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC)" na listagem de "Tipo de uso"
+    Quando selecionar "CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC)" na listagem de "Tipo de uso"
       E selecionar "Sim" no campo "Uso Insignificante"
       E clicar no botao "Criar Modo Uso"
       E aparecer a mensagem de sucesso "A operação foi executada com sucesso"
@@ -18,18 +18,21 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
   Cenario: Preenchimento da primeira etapa
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
-    Quando eu preencher "Gabriel Lunar" no campo "Destinatário"
+      E aguardar 2 segundos para carregar a pagina
+    Quando preencher "Gabriel Lunar" no campo "Destinatário"
       E preencher "Centro" no campo "Logradouro" em "Endereço para Correspondência"
       E preencher "4" no campo "Número" em "Endereço para Correspondência"
       E preencher "Centro" no campo "Bairro" em "Endereço para Correspondência"
-      E selecionar "MG" na listagem de "Estado"
-      E selecionar "Lavras" na listagem de "Munícipio"
+      E selecionar "MG" na listagem de "Estado" em "Endereço para Correspondência"
+      E selecionar "Lavras" na listagem de "Municipio" em "Endereço para Correspondência"
       E preencher "Industrial" no campo "Distrito"
-      E preencher "37200-000" no campo "CEP" em "Endereço para Correspondência"
+      E preencher "37200000" no campo "CEP" em "Endereço para Correspondência"
       E preencher "455645" no campo "Caixa Postal" em "Endereço para Correspondência"
       E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência"
       E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência"
-      E preencher "igor.ribeiro@gmail.com" no campo "Email"
+      E preencher "igor.ribeiro@gmail.com" no campo "E-mail"
+      E aguardar 10 segundos para carregar a pagina
+
 
       
    

@@ -39,10 +39,6 @@ private
     element_opcao.click
   end
 
-  def create_selector_campo campo
-    "$$(\"label:contains('#{campo}')\", \"span:contains('#{campo}')\")[0]"
-  end
-
   def create_selector_opcao tipo_do_campo, selector_campo, opcao
     case tipo_do_campo
       when 'combobox' then create_selector_opcao_combobox( selector_campo, opcao )

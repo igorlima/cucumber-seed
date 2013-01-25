@@ -47,7 +47,7 @@ Funcionalidade: Verificar funcionalidades básicas
       E a etapa 1 deve estar habilitada
       E a etapa 2 deve ser a etapa atual
 
-  Cenario: Validando coordenada sem especificar município na etapa 2 - Localização do Poço Tubular
+  Cenario: Validar coordenada sem especificar município na etapa 2 - Localização do Poço Tubular
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
       E aguardar 2 segundos para carregar a pagina
@@ -55,7 +55,16 @@ Funcionalidade: Verificar funcionalidades básicas
       E preencher "-45.12" no campo "Longitude (Grau Decimal)"
       E clicar no botao "Validar coordenada"
     Entao deve aparecer a mensagem de erro "Favor selecionar um município"
-    E aguardar 10 segundos para carregar a pagina
+
+  Cenario: Validar coordenada especificando um município errado na etapa 2 - Localização do Poço Tubular
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
+      E aguardar 2 segundos para carregar a pagina
+    Quando preencher "-21.22" no campo "Latitude (Grau Decimal)"
+      E preencher "-45.12" no campo "Longitude (Grau Decimal)"
+      E selecionar "Alfenas" na listagem de "Município"
+      E clicar no botao "Validar coordenada"
+    Entao deve aparecer a mensagem de erro "A coordenada informada está no municipio de Lavras, diferente do municipio de Alfenas informado"
 
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"

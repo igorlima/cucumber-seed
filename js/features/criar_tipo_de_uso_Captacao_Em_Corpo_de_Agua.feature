@@ -42,8 +42,10 @@ Funcionalidade: Verificar funcionalidades básicas
     Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
       E a etapa 1 deve ser a etapa atual
       E a etapa 2 deve estar desabilitada
-
-      
+    Quando clicar no botao "Avançar"
+    Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
+      E a etapa 1 deve estar habilitada
+      E a etapa 2 deve ser a etapa atual
       E aguardar 5 segundos para carregar a pagina
 
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado

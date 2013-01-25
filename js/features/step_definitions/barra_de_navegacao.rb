@@ -5,7 +5,7 @@ E /^clicar na etapa ([0-9]+)$/ do |numero_da_etapa|
   clicar_na_etapa numero_da_etapa
 end
 
-Entao /^a etapa ([0-9]+) deve estar ativa$/ do |numero_da_etapa|
+Entao /^a etapa ([0-9]+) deve estar habilitada$/ do |numero_da_etapa|
   verifique_status_da_etapa numero_da_etapa, :ativa
 end
 

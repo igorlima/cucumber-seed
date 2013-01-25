@@ -3,7 +3,7 @@
 
 Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
    
-  Cenario: Criação do modo de uso
+  Cenario: Criação do modo de uso de Captação em Corpo de Água e do modo de uso de Poço Tubular Profundo
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
     Quando selecionar "CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC)" na listagem de "Tipo de uso"
       E selecionar "Sim" no campo "Uso Insignificante"
@@ -44,10 +44,12 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Excluir" da segunda linha da tabela de caracterizacoes
       E aparecer um alerta com a mensagem "Deseja realmente excluir o modo de uso: CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC) ?"
-    Entao confirme o alerta
+      E confirmar o alerta
+    Entao deve aparecer a mensagem de sucesso "A operação foi executada com sucesso"
 
   Cenario: Excluir modo de uso de Poço Tubular Profundo criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Excluir" da primeira linha da tabela de caracterizacoes
       E aparecer um alerta com a mensagem "Deseja realmente excluir o modo de uso: POÇO TUBULAR PROFUNDO ?"
-    Entao confirme o alerta
+      E confirmar o alerta
+    Entao deve aparecer a mensagem de sucesso "A operação foi executada com sucesso"

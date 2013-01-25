@@ -96,9 +96,9 @@ Funcionalidade: Verificar funcionalidades básicas
       E o campo "UPGRH" visivel
       E o campo "Bacia Federal" visivel
       E o campo "Bacia Estadual" visivel
-      E o campo "UPGRH" esteja preenchido com "GD2"
-      E o campo "Bacia Federal" esteja preenchido com "Rio Grande"
-      E o campo "Bacia Estadual" esteja preenchido com "Rio das Mortes e Rio Jacaré"
+      E o campo "UPGRH" esteja preenchido com "PA1"
+      E o campo "Bacia Federal" esteja preenchido com "Rio Pardo"
+      E o campo "Bacia Estadual" esteja preenchido com "Rio Mosquito"
       E clicar no botao "Gravar"
     Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
 

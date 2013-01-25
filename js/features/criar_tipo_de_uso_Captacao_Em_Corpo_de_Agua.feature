@@ -15,6 +15,13 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
       E o Modo de Uso "CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC)" deve constar na segunda linha da tabela de caracterizacoes
       E o Modo de Uso "POÇO TUBULAR PROFUNDO" deve constar na primeira linha da tabela de caracterizacoes
 
+  Cenario: Acessar etapa não disponivel
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
+      E aguardar 2 segundos para carregar a pagina
+    Quando clicar na etapa 2
+    Então deve aparecer um alerta com a mensagem "Uma etapa não pode ser acessada diretamente se não foi preenchida anteriormente ou se não é obrigatória"
+
   Cenario: Preenchimento da primeira etapa
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
@@ -31,5 +38,4 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
       E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência" caso esteja vazio
       E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência" caso esteja vazio
       E preencher "igor.ribeiro@gmail.com" no campo "E-mail" caso esteja vazio
-      E clicar na etapa 2
       E aguardar 5 segundos para carregar a pagina

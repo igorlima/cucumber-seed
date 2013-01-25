@@ -9,7 +9,22 @@ E /^aparecer a mensagem de (sucesso|erro) "([^\"]*)"$/ do |tipo_da_mensagem, men
   verify_mensagem tipo_da_mensagem, mensagem
 end
 
+Entao /^deve aparecer um alerta com a mensagem "([^\"]*)"$/ do |mensagem|
+  verify_alerta mensagem
+end
+
+E /^aparecer um alerta com a mensagem "([^\"]*)"$/ do |mensagem|
+  verify_alerta mensagem
+end
+
 private
+
+  def verify_alerta mensagem
+    alerta = @driver.switch_to.alert
+    mensagem_do_alerta = alerta.text
+    fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem}!")) unless mensagem.eql? mensagem_do_alerta
+  end
+
 
   def verify_mensagem tipo_da_mensagem, mensagem
     fail(ArgumentError.new('Mensagem de alerta nao esta visivel!')) unless is_mensagem_visible?

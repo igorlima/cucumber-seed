@@ -22,7 +22,7 @@ Funcionalidade: Verificar funcionalidades básicas
     Quando clicar na etapa 2
     Então deve aparecer um alerta com a mensagem "Uma etapa não pode ser acessada diretamente se não foi preenchida anteriormente ou se não é obrigatória"
 
-  Cenario: Preenchimento da primeira etapa
+  Cenario: Preenchimento da etapa 1 - Requerente Empreendedor/Empreendimento
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
       E aguardar 2 segundos para carregar a pagina
@@ -46,7 +46,16 @@ Funcionalidade: Verificar funcionalidades básicas
     Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
       E a etapa 1 deve estar habilitada
       E a etapa 2 deve ser a etapa atual
-      E aguardar 5 segundos para carregar a pagina
+
+  Cenario: Validando coordenada sem especificar município na etapa 2 - Localização do Poço Tubular
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
+      E aguardar 2 segundos para carregar a pagina
+    Quando preencher "-21.22" no campo "Latitude (Grau Decimal)"
+      E preencher "-45.12" no campo "Longitude (Grau Decimal)"
+      E clicar no botao "Validar coordenada"
+    Entao deve aparecer a mensagem de erro "Favor selecionar um município"
+    E aguardar 10 segundos para carregar a pagina
 
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"

@@ -31,4 +31,5 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
       E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência" caso esteja vazio
       E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência" caso esteja vazio
       E preencher "igor.ribeiro@gmail.com" no campo "E-mail" caso esteja vazio
+      E clicar na etapa 2
       E aguardar 5 segundos para carregar a pagina

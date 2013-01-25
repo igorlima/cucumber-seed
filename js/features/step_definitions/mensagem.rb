@@ -17,12 +17,20 @@ E /^aparecer um alerta com a mensagem "([^\"]*)"$/ do |mensagem|
   verifique_alerta mensagem
 end
 
+Entao /^confirme o alerta$/ do
+  confirmar_alerta
+end
+
 E /^confirmar o alerta$/ do
-  verifique_alerta mensagem
+  confirmar_alerta
+end
+
+Entao /^rejeite o alerta$/ do
+  rejeitar_alerta
 end
 
 E /^rejeitar o alerta$/ do
-  verifique_alerta mensagem
+  rejeitar_alerta
 end
 
 private
@@ -30,7 +38,7 @@ private
   def verifique_alerta mensagem
     alerta = @driver.switch_to.alert
     mensagem_do_alerta = alerta.text
-    fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem}!")) unless mensagem.eql? mensagem_do_alerta
+    fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem} \nConteudo exibido: #{mensagem_do_alerta}")) unless mensagem.eql? mensagem_do_alerta
   end
 
   def confirmar_alerta

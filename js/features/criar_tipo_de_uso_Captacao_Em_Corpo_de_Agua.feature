@@ -39,3 +39,15 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
       E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência" caso esteja vazio
       E preencher "igor.ribeiro@gmail.com" no campo "E-mail" caso esteja vazio
       E aguardar 5 segundos para carregar a pagina
+
+  Cenario: Excluir modo de uso de Captação em Corpo de Água criado
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Excluir" da segunda linha da tabela de caracterizacoes
+      E aparecer um alerta com a mensagem "Deseja realmente excluir o modo de uso: CAPTAÇÃO EM CORPO DE ÁGUA (RIOS, LAGOAS NATURAIS ETC) ?"
+    Entao confirme o alerta
+
+  Cenario: Excluir modo de uso de Poço Tubular Profundo criado
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Excluir" da primeira linha da tabela de caracterizacoes
+      E aparecer um alerta com a mensagem "Deseja realmente excluir o modo de uso: POÇO TUBULAR PROFUNDO ?"
+    Entao confirme o alerta

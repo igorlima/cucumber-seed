@@ -24,6 +24,7 @@ private
   def preencher_campo_texto_usando_seletor seletor, texto, caso_esteja_vazio
     elemento_dom = @driver.execute_script("return #{seletor}")
     fail(ArgumentError.new('Campo texto nao encontrado!')) if elemento_dom.nil?
+    elemento_dom.click
 
     if not caso_esteja_vazio.nil?
       text = @driver.execute_script("return #{seletor}.value")

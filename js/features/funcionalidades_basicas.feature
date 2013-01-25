@@ -55,6 +55,7 @@ Funcionalidade: Verificar funcionalidades básicas
       E preencher "-45.12" no campo "Longitude (Grau Decimal)"
       E clicar no botao "Validar coordenada"
     Entao deve aparecer a mensagem de erro "Favor selecionar um município"
+      E o campo "UPGRH" nao visivel
 
   Cenario: Validar coordenada especificando um município errado na etapa 2 - Localização do Poço Tubular
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
@@ -65,6 +66,7 @@ Funcionalidade: Verificar funcionalidades básicas
       E selecionar "Alfenas" na listagem de "Município"
       E clicar no botao "Validar coordenada"
     Entao deve aparecer a mensagem de erro "A coordenada informada está no municipio de Lavras, diferente do municipio de Alfenas informado"
+      E o campo "UPGRH" nao visivel
 
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"

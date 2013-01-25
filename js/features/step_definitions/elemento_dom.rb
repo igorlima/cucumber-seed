@@ -9,6 +9,14 @@ E /^o campo "([^\"]*)" estiver visivel em "([^\"]*)"$/ do |campo, container|
   fail(ArgumentError.new("O campo #{campo} nao esta visivel em #{containes}")) unless componente_dom_visivel_em_container? container, campo
 end
 
+E /^o campo "([^\"]*)" nao estiver visivel$/ do |campo|
+  fail(ArgumentError.new("O campo #{campo} esta visivel!")) if componente_dom_visivel? campo
+end
+
+E /^o campo "([^\"]*)" nao estiver visivel em "([^\"]*)"$/ do |campo, container|
+  fail(ArgumentError.new("O campo #{campo} esta visivel em #{containes}")) if componente_dom_visivel_em_container? container, campo
+end
+
 public
 
   def seletor_campo nome_campo

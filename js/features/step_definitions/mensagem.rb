@@ -2,32 +2,32 @@
 # encoding: utf-8
 
 Entao /^deve aparecer a mensagem de (sucesso|erro) "([^\"]*)"$/ do |tipo_da_mensagem, mensagem|
-  verify_mensagem tipo_da_mensagem, mensagem
+  verifique_mensagem tipo_da_mensagem, mensagem
 end
 
 E /^aparecer a mensagem de (sucesso|erro) "([^\"]*)"$/ do |tipo_da_mensagem, mensagem|
-  verify_mensagem tipo_da_mensagem, mensagem
+  verifique_mensagem tipo_da_mensagem, mensagem
 end
 
 Entao /^deve aparecer um alerta com a mensagem "([^\"]*)"$/ do |mensagem|
-  verify_alerta mensagem
+  verifique_alerta mensagem
 end
 
 E /^aparecer um alerta com a mensagem "([^\"]*)"$/ do |mensagem|
-  verify_alerta mensagem
+  verifique_alerta mensagem
 end
 
 E /^confirmar o alerta$/ do
-  verify_alerta mensagem
+  verifique_alerta mensagem
 end
 
 E /^rejeitar o alerta$/ do
-  verify_alerta mensagem
+  verifique_alerta mensagem
 end
 
 private
 
-  def verify_alerta mensagem
+  def verifique_alerta mensagem
     alerta = @driver.switch_to.alert
     mensagem_do_alerta = alerta.text
     fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem}!")) unless mensagem.eql? mensagem_do_alerta
@@ -41,7 +41,7 @@ private
     @driver.switch_to.alert.dismiss
   end
 
-  def verify_mensagem tipo_da_mensagem, mensagem
+  def verifique_mensagem tipo_da_mensagem, mensagem
     fail(ArgumentError.new('Mensagem de alerta nao esta visivel!')) unless is_mensagem_visible?
     fail(ArgumentError.new("Mensagem de alerta nao eh de #{tipo_da_mensagem}!")) unless is? tipo_da_mensagem
     fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem}!")) unless contains? mensagem

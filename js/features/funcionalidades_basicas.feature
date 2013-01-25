@@ -81,6 +81,26 @@ Funcionalidade: Verificar funcionalidades básicas
       E o campo "Bacia Federal" visivel
       E o campo "Bacia Estadual" visivel
 
+  Cenario: Preenchimento da etapa 2 - Localização do Poço Tubular
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
+      E aguardar 2 segundos para carregar a pagina
+    Quando selecionar "Lavras" na listagem de "Município"
+      E preencher "Casa da Goiaba" no campo "Local(fazenda, sítio, etc)"
+      E preencher "Próximo da Lagoa Grande" no campo "Referência adicional para chegarmos ao local"
+      E preencher "-21.22" no campo "Latitude (Grau Decimal)"
+      E preencher "-45.12" no campo "Longitude (Grau Decimal)"
+      E clicar no botao "Validar coordenada"
+      E aparecer a mensagem de sucesso "Coordenada validada"
+      E o campo "UPGRH" visivel
+      E o campo "Bacia Federal" visivel
+      E o campo "Bacia Estadual" visivel
+      E o campo "UPGRH" esteja preenchido com "GD2"
+      E o campo "Bacia Federal" esteja preenchido com "Rio Grande"
+      E o campo "Bacia Estadual" esteja preenchido com "Rio das Mortes e Rio Jacaré"
+      E clicar no botao "Gravar"
+    Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
+
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Excluir" da segunda linha da tabela de caracterizacoes

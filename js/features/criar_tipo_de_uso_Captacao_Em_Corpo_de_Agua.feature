@@ -1,7 +1,7 @@
 # language: pt
 # encoding: utf-8
 
-Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
+Funcionalidade: Verificar funcionalidades básicas
    
   Cenario: Criação do modo de uso de Captação em Corpo de Água e do modo de uso de Poço Tubular Profundo
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
@@ -38,6 +38,12 @@ Funcionalidade: Criar um novo modo de uso de Uso Captação em Corpo de Água
       E preencher "3599991602" no campo "Telefone" em "Endereço para Correspondência" caso esteja vazio
       E preencher "3599991602" no campo "Fax" em "Endereço para Correspondência" caso esteja vazio
       E preencher "igor.ribeiro@gmail.com" no campo "E-mail" caso esteja vazio
+      E clicar no botao "Gravar"
+    Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
+      E a etapa 1 deve ser a etapa atual
+      E a etapa 2 deve estar desabilitada
+
+      
       E aguardar 5 segundos para carregar a pagina
 
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado

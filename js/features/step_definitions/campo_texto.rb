@@ -21,8 +21,8 @@ private
 
   def verificar_conteudo_do_campo_texto texto, campo, container
     seletor = container.nil? ?
-              create_selector_campo_texto (campo) :
-              create_seletor_campo_texto_em_container (container, campo)
+              create_selector_campo_texto( campo ) :
+              create_seletor_campo_texto_em_container( container, campo )
 
     conteudo_campo = conteudo_do_campo_texto seletor
     fail(ArgumentError.new("O conteudo do campo NAO eh #{texto}!")) unless texto.eql? conteudo_campo

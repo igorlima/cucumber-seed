@@ -85,12 +85,13 @@ Funcionalidade: Verificar funcionalidades básicas
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
       E aguardar 2 segundos para carregar a pagina
-    Quando selecionar "Lavras" na listagem de "Município"
+    Quando selecionar "Vargem Grande do Rio Pardo" na listagem de "Município"
       E preencher "Casa da Goiaba" no campo "Local(fazenda, sítio, etc)"
       E preencher "Próximo da Lagoa Grande" no campo "Referência adicional para chegarmos ao local"
-      E preencher "-21.22" no campo "Latitude (Grau Decimal)"
-      E preencher "-45.12" no campo "Longitude (Grau Decimal)"
+      E preencher "-15.44" no campo "Latitude (Grau Decimal)"
+      E preencher "-42.30" no campo "Longitude (Grau Decimal)"
       E clicar no botao "Validar coordenada"
+      E aguardar 3 segundos para carregar a pagina
       E aparecer a mensagem de sucesso "Coordenada validada"
       E o campo "UPGRH" visivel
       E o campo "Bacia Federal" visivel

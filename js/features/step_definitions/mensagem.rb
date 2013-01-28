@@ -51,8 +51,8 @@ private
 
   def verifique_mensagem tipo_da_mensagem, mensagem
     fail(ArgumentError.new('Mensagem de alerta nao esta visivel!')) unless is_mensagem_visible?
-    fail(ArgumentError.new("Mensagem de alerta nao eh de #{tipo_da_mensagem}!")) unless is? tipo_da_mensagem
-    fail(ArgumentError.new("A mensagem nao possui o conteudo: #{mensagem}!")) unless contains? mensagem
+    fail(ArgumentError.new("Mensagem de alerta nao eh de #{tipo_da_mensagem}.\nMensagem exibida: #{conteudo_da_mensagem_de_alerta}")) unless is? tipo_da_mensagem
+    fail(ArgumentError.new("Mensagem de alerta nao possui o conteudo: #{mensagem}.\nMensagem exibida: #{conteudo_da_mensagem_de_alerta}")) unless contains? mensagem
   end
 
   def create_selector_container_mensagem
@@ -66,10 +66,13 @@ private
     end
   end
 
+  def conteudo_da_mensagem_de_alerta
+    selector_mensagem = "#{create_selector_container_mensagem}.getElement(\"li\").innerHTML"
+    @driver.execute_script("return #{selector_mensagem}")
+  end
+
   def contains? mensagem
-    selector_mensagem = "#{create_selector_container_mensagem}.getElement(\":contains('#{mensagem}')\")"
-    element_mensagem = @driver.execute_script("return #{selector_mensagem}")
-    not element_mensagem.nil?
+    conteudo_da_mensagem_de_alerta.include? mensagem
   end
 
   def is_mensagem_visible?

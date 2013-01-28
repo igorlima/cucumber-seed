@@ -5,15 +5,15 @@ E /^clicar na etapa ([0-9]+)$/ do |numero_da_etapa|
   clicar_na_etapa numero_da_etapa
 end
 
-Entao /^a etapa ([0-9]+) deve estar habilitada$/ do |numero_da_etapa|
+Entao /^a etapa ([0-9]+) (deve )?estar habilitada$/ do |numero_da_etapa, deve|
   verifique_status_da_etapa numero_da_etapa, :ativa
 end
 
-Entao /^a etapa ([0-9]+) deve ser a etapa atual$/ do |numero_da_etapa|
+Entao /^a etapa ([0-9]+) (deve )?ser a etapa atual$/ do |numero_da_etapa, deve|
   verifique_status_da_etapa numero_da_etapa, :atual
 end
 
-Entao /^a etapa ([0-9]+) deve estar desabilitada$/ do |numero_da_etapa|
+Entao /^a etapa ([0-9]+) (deve )?estar desabilitada$/ do |numero_da_etapa, deve|
   verifique_status_da_etapa numero_da_etapa, :inativa
 end
 

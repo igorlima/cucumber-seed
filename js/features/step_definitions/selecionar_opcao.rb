@@ -56,7 +56,7 @@ private
   end
 
   def selector_opcao_radio opcao
-    ".getParent('tr').getElement(\"span:contains('#{opcao}')\", \"label:contains('#{opcao}')\").previousElementSibling"
+    ".getParent('tr').getElement(\"td :contains('#{opcao}')\").previousElementSibling"
   end
 
   def create_selector_opcao_radio selector_campo, opcao

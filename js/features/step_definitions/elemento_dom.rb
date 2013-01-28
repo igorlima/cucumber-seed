@@ -19,6 +19,26 @@ end
 
 public
 
+  def seletor_campo_abaixo_de_um_outro_campo primeiro_campo, proximo_campo
+    "(function(){
+
+      var primeiro_elemento_dom = null;
+      var elementos_dom = $$(#{seletor_campo primeiro_campo}, #{seletor_campo proximo_campo});
+
+      elementos_dom.each(
+        function(item, index){
+          if (item.innerHTML.contains(\"#{primeiro_campo}\")) {
+            primeiro_elemento_dom = item;
+          }
+        }
+      );
+
+      var index_primeiro_elemento = elementos_dom.indexOf( primeiro_elemento_dom );
+      return elementos_dom[index_primeiro_elemento+1];
+
+    })()"
+  end
+
   def seletor_campo nome_campo
     "\"label:contains('#{nome_campo}')\", \"span:contains('#{nome_campo}')\""
   end

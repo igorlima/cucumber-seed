@@ -2,11 +2,15 @@
 # encoding: utf-8
 
 E /^preencher "([^\"]*)" no campo "([^\"]*)"( caso esteja vazio)?$/ do |texto, nome_campo, caso_esteja_vazio|
-  preencher_campo_texto( nome_campo, texto, caso_esteja_vazio )
+  preencher_campo_texto nome_campo, texto, caso_esteja_vazio
 end
 
 E /^preencher "([^\"]*)" no campo "([^\"]*)" em "([^\"]*)"( caso esteja vazio)?$/ do |texto, nome_campo, container, caso_esteja_vazio|
-  preencher_campo_texto_em_container( container, nome_campo, texto, caso_esteja_vazio )
+  preencher_campo_texto_em_container container, nome_campo, texto, caso_esteja_vazio
+end
+
+E /^preencher "([^\"]*)" no campo "([^\"]*)" abaixo de "([^\"]*)"( caso esteja vazio)?$/ do |texto, nome_campo, container, caso_esteja_vazio|
+  preencher_campo_texto_abaixo_de container, nome_campo, texto, caso_esteja_vazio
 end
 
 E /^o campo "([^\"]*)" esteja preenchido com "([^\"]*)"$/ do |campo, texto|
@@ -26,6 +30,11 @@ private
 
     conteudo_campo = conteudo_do_campo_texto seletor
     fail(ArgumentError.new("O conteudo do campo NAO eh #{texto}!")) unless texto.eql? conteudo_campo
+  end
+
+  def preencher_campo_texto_abaixo_de primeiro_campo, proximo_campo, texto, caso_esteja_vazio
+    seletor = create_seletor_campo_abaixo_de_um_outro_campo primeiro_campo, proximo_campo
+    preencher_campo_texto_usando_seletor seletor, texto, caso_esteja_vazio
   end
 
   def preencher_campo_texto_em_container nome_container, nome_campo, texto, caso_esteja_vazio
@@ -64,6 +73,11 @@ private
 
   def create_selector_campo_texto nome_campo
     "#{create_selector_campo nome_campo}#{seletor_campo_texto}"
+  end
+
+  def create_seletor_campo_abaixo_de_um_outro_campo primeiro_campo, proximo_campo
+    seletor_container = seletor_campo_abaixo_de_um_outro_campo primeiro_campo, proximo_campo
+    "#{seletor_container}#{seletor_campo_texto}"
   end
 
   def create_seletor_campo_texto_em_container nome_container, nome_campo

@@ -102,6 +102,32 @@ Funcionalidade: Verificar funcionalidades básicas
       E clicar no botao "Gravar"
     Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
 
+  Cenario: Preenchimento da etapa 3 - Caracterização do Poço Tubular
+    Dado o sistema logado com o usuario "mbov" e com a senha "123"
+      E clicar no botao "Editar" da primeira linha da tabela de caracterizacoes
+      E aguardar 2 segundos para carregar a pagina
+      E a etapa 3 ser a etapa atual
+    Quando preencher "TBraz" no campo "Nome da empresa perfuradora do poço"
+      E preencher "2012" no campo "Ano da perfuração"
+      E preencher "10" no campo "Diâmetro (mm)"
+      E preencher "12" no campo "Profundidade do poço (m)"
+      E selecionar "Salgada" no campo "Tipo de água"
+      E selecionar "Bomba submersa" no campo "Equipamento instalado"
+      E selecionar "Elétrica" no campo "Energia"
+      E preencher "150" no campo "Potência (cv)"
+      E preencher "15" no campo "Volume do reservatório de água (m³)"
+      E selecionar "Não" no campo "Incluída laje de proteção"
+      E preencher "10" no campo "Cimentação sanitária (m)"
+      E preencher "Philips" no campo "Hidrômetro instalado (Marca/Modelo)"
+      E preencher "12/10/2010" no campo "Data da instalação"
+      E preencher "Panasonic" no campo "Horímetro instalado (Marca/Modelo)"
+      E preencher "15/05/2012" no campo "Data da instalação" abaixo de "Horímetro instalado (Marca/Modelo)"
+      E preencher "1" no campo "Vazão (m³/h)"
+      E preencher "00:30" no campo "Nº de horas por dia"
+      E preencher "02" no campo "Nº de meses por ano"
+      E clicar no botao "Gravar"
+    Entao deve aparecer a mensagem de sucesso "Formulário salvo com sucesso"
+
   Cenario: Excluir modo de uso de Captação em Corpo de Água criado
     Dado o sistema logado com o usuario "mbov" e com a senha "123"
       E clicar no botao "Excluir" da segunda linha da tabela de caracterizacoes
@@ -115,3 +141,4 @@ Funcionalidade: Verificar funcionalidades básicas
       E aparecer um alerta com a mensagem "Deseja realmente excluir o modo de uso: POÇO TUBULAR PROFUNDO ?"
       E confirmar o alerta
     Entao deve aparecer a mensagem de sucesso "A operação foi executada com sucesso"
+
